@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "marky-mark-bot"
+version = "0.1.0"
+description = "Bot for marking visiting university"
+authors = ["Daniil Bozhko <voc.offacc@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiogram = "^3.4.1"
+pydantic-settings = "^2.2.1"
+pytest = "^8.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,9 @@
+# Poetry
+poetry.lock
+
+# Environment
+.env
+
+# Cache
+__pycache__
+.pytest_cache
