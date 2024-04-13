@@ -1,0 +1,9 @@
+# Env
+.env
+.venv
+
+# Poetry
+poetry.lock
+
+# Python
+__pycache__
