@@ -20,7 +20,7 @@ async def test_succesful_find_by_chat_id(setup_db):
     async with async_session() as session:
         repo = StudentsRepository(session)
 
-        res = repo.find_chatid(1)
+        res = await repo.find_chatid(1)
     
     assert res == None
 
