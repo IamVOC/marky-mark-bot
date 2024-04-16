@@ -22,6 +22,18 @@ class StudentsRepository(IStudentsRepository):
         if row:
             return StudentDTO.model_validate(row, from_attributes=True)
 
+    async def find_free_guid(self, student_guid: str) -> Optional[StudentDTO]:
+        stmt = (
+                select(Student).
+                where(Student.student_guid == student_guid).
+                where(Student.chat_id == None)
+        )
+        rows = await self._session.execute(stmt)
+        row = rows.one()
+        if row:
+            return StudentDTO.model_validate(row, from_attributes=True)
+
+
     async def register_chatid(self, student_guid: str, chat_id: int) -> None:
         stmt = (
                 update(Student).
