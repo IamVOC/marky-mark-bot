@@ -17,7 +17,7 @@ class StudentsRepository(IStudentsRepository):
                 select(Student).
                 where(Student.chat_id == chat_id)
         )
-        rows = await self._session.execute(stmt)
+        rows = await self._session.scalars(stmt)
         row = rows.one()
         if row:
             return StudentDTO.model_validate(row, from_attributes=True)
